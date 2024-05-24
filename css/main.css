@@ -1,102 +1,79 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
-
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-li,
-a,
-button {
-  font-family: 'lato';
-  font-weight: 500;
-  font-size: 25px;
-  color: #fff;
+  box-sizing: border-box;
   text-decoration: none;
-
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: 'lato';
 }
 
-body {
-  font-family: 'lato';
-  background-color: black;
-  height: 100vh;
-  text-shadow: 0 0 10px;
+:root {
+  --bg-color: #080808;
+  --second-bg-color: #1b0000;
+  --text-color: white;
+  --main-color: red;
 }
 
 html {
-  scroll-behavior: smooth;
+  font-size: 60%;
+  overflow-x: hidden;
 }
 
-ul {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
 }
 
 .header {
-  position: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 20px;
-  background-color: #333;
-}
-
-.nav {
-  height: 3.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 4rem 12% 4rem;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
-  align-content: center;
+  align-items: center;
+  z-index: 100;
+  width: 100%;
 }
 
-.nav_name {
-  color: #fff;
-  text-shadow: 0 0 4px rgb(255, 255, 255, .3);
-  z-index: 9999;
-  font-size: 30px;
-  padding-top: 10px;
-}
-
-.nav_menu {
-  list-style-type: none;
-}
-
-.nav_menu li {
-  display: inline-block;
-  padding: 0 20px;
-  padding-top: 10px
-}
-
-.nav_menu li a {
-  transition: all 0.3s ease 0s;
-}
-
-.nav_menu li a:hover {
-  color: #f00;
-}
-
-/* button {
-  padding: 9px 25px;
-  background-color: #f00;
-  border: none;
+.logo {
+  font-size: 3rem;
+  color: var(--text-color);
   cursor: pointer;
-  border-radius: 50px;
-  transition: all 0.3s ease 0s;
+  transition: 0.3s ease;
 }
 
-button:hover {
-  background-color: #f00;
-  color: #f00;
-} */
+.logo:hover {
+  transform: sacle(1.1);
+}
 
-#bg {
-  position: absolute;
-  top: 10vh;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
+.logo span {
+  text-shadow: 0 0 25px var(--main-color);
+}
+
+.navba a {
+  font-size: 1.8rem;
+  color: var(--text-color);
+  margin-left: 4rem;
+  font-weight: 500;
+  transition: 0.3 ease;
+  border-bottom: 3px solid transparent;
+}
+
+.navbar a:hoever,
+.navbar a.active {
+  color: var(--main-color);
+  border-bottom: 3px solid var(--main-color);
+}
+
+#menu-icon {
+  font-size: 3.6rem;
+  color: var(--main-color);
+  display: none;
 }
